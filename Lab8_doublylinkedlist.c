@@ -13,55 +13,7 @@ struct Enode
     struct Enode *right;
 } *head = NULL;
 struct Enode *tail, *temp1, *temp2;
-void create(char[], char[], char[], char[], int, long long int);
-void ins_beg(char[], char[], char[], char[], int, long long int);
-void ins_end(char[], char[], char[], char[], int, long long int);
-void del_beg();
-void del_end();
-void display();
 int count = 0;
-void main()
-{
-    int choice;
-    char s[15], n[20], dpt[5], des[10];
-    int sal;
-    long long int p;
-    printf("1.Create\n2.Display\n3.Insert at beginning\n4.Insert at End\n5.Delete at beginning\n6.Delete at End\n7.Exit\n");
-    while (1)
-    {
-        printf("\nEnter your choice\n");
-        scanf("%d", &choice);
-        switch (choice)
-        {
-        case 1:
-            printf("Enter the required data(Emp no,Name,Dept,Desig,sal,phone\n");
-            scanf("%s%s%s%s%d%lld", s, n, dpt, des, &sal, &p);
-            create(s, n, dpt, des, sal, p);
-            break;
-        case 2:
-            display();
-            break;
-        case 3:
-            printf("Enter the required data (Emp no,Name,Dept,Desig,sal,phone\n");
-            scanf("%s%s%s%s%d%lld", s, n, dpt, des, &sal, &p);
-            ins_beg(s, n, dpt, des, sal, p);
-            break;
-        case 4:
-            printf("Enter the required data(Emp no,Name,Dept,Desig,sal,phone\n");
-            scanf("%s%s%s%s%d%lld", s, n, dpt, des, &sal, &p);
-            ins_end(s, n, dpt, des, sal, p);
-            break;
-        case 5:
-            del_beg();
-            break;
-        case 6:
-            del_end();
-            break;
-        case 7:
-            exit(0);
-        }
-    }
-}
 void create(char s[15], char n[20], char dpt[5], char des[10], int sal, long long int p)
 {
     if (head == NULL)
@@ -145,4 +97,46 @@ void del_end()
     free(tail);
     tail = temp1;
     tail->right = NULL;
+}
+void main()
+{
+    int choice;
+    char s[15], n[20], dpt[5], des[10];
+    int sal;
+    long long int p;
+    printf("1.Create\n2.Display\n3.Insert at beginning\n4.Insert at End\n5.Delete at beginning\n6.Delete at End\n7.Exit\n");
+    while (1)
+    {
+        printf("\nEnter your choice\n");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("Enter the required data(Emp no,Name,Dept,Desig,sal,phone\n");
+            scanf("%s%s%s%s%d%lld", s, n, dpt, des, &sal, &p);
+            create(s, n, dpt, des, sal, p);
+            break;
+        case 2:
+            display();
+            break;
+        case 3:
+            printf("Enter the required data (Emp no,Name,Dept,Desig,sal,phone\n");
+            scanf("%s%s%s%s%d%lld", s, n, dpt, des, &sal, &p);
+            ins_beg(s, n, dpt, des, sal, p);
+            break;
+        case 4:
+            printf("Enter the required data(Emp no,Name,Dept,Desig,sal,phone\n");
+            scanf("%s%s%s%s%d%lld", s, n, dpt, des, &sal, &p);
+            ins_end(s, n, dpt, des, sal, p);
+            break;
+        case 5:
+            del_beg();
+            break;
+        case 6:
+            del_end();
+            break;
+        case 7:
+            exit(0);
+        }
+    }
 }

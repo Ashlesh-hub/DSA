@@ -125,12 +125,12 @@ void main()
 {
     int data, ch, i, n;
     NODE *root = NULL;
+    printf("\n1.Insertion in Binary Search Tree");
+    printf("\n2.Search Element in Binary Search Tree");
+    printf("\n3.Delete Element in Binary Search Tree");
+    printf("\n4.Inorder\n5.Preorder\n6.Postorder\n7.Exit");
     while (1)
     {
-        printf("\n1.Insertion in Binary Search Tree");
-        printf("\n2.Search Element in Binary Search Tree");
-        printf("\n3.Delete Element in Binary Search Tree");
-        printf("\n4.Inorder\n5.Preorder\n6.Postorder\n7.Exit");
         printf("\nEnter your choice: ");
         scanf("%d", &ch);
         switch (ch)

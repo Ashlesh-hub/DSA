@@ -9,9 +9,8 @@ struct node
 };
 struct node *head1, *head2, *head3, *temp, *temp1, *temp2, *temp3, *list1, *list2, *list3, *list;
 struct node *dummy1, *dummy2, *dummy3;
-struct node *create_poly(i nt,
- int, struct node *);
-// void create_poly2(int , int);
+struct node *create_poly(int,int, struct node *);
+void create_poly2(int , int);
 void display(struct node *);
 void add_poly();
 void eval_poly(int);

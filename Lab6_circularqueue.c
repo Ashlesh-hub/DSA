@@ -5,33 +5,6 @@
 char CQ[SIZE];
 int front = -1, rear = -1;
 int ch;
-void CQ_Insert();
-void CQ_Delet();
-void CQ_Display();
-void main()
-{
-    printf("1.Insert\n2.Delete\n3.Display\n4.Exit\n");
-    while (1)
-    {
-        printf("Enter your choice\n");
-        scanf("%d", &ch);
-        switch (ch)
-        {
-        case 1:
-            CQ_Insert();
-            break;
-            
-        case 2:
-            CQ_Delet();
-            break;
-        case 3:
-            CQ_Display();
-            break;
-        case 4:
-            exit(0);
-        }
-    }
-}
 void CQ_Insert()
 {
     char ele;
@@ -82,5 +55,29 @@ void CQ_Display()
             printf("%c\t", CQ[i]);
         }
         printf("%c\n", CQ[i]);
+    }
+}
+void main()
+{
+    printf("1.Insert\n2.Delete\n3.Display\n4.Exit\n");
+    while (1)
+    {
+        printf("Enter your choice\n");
+        scanf("%d", &ch);
+        switch (ch)
+        {
+        case 1:
+            CQ_Insert();
+            break;
+            
+        case 2:
+            CQ_Delet();
+            break;
+        case 3:
+            CQ_Display();
+            break;
+        case 4:
+            exit(0);
+        }
     }
 }

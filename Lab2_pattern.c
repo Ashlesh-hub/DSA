@@ -1,13 +1,6 @@
 #include <stdio.h>
-void read_string();
-void pattern_match();
 char STR[100], PAT[100], REP[100], ans[100];
 int i, j, k, c, m, flag = 0;
-int main()
-{
-    read_string();
-    pattern_match();
-}
 void read_string()
 {
     printf("Enter the main string :\n");
@@ -55,4 +48,9 @@ void pattern_match()
         ans[j] = '\0';
         printf("The Resultant String is : %s \n", ans);
     }
+}
+int main()
+{
+    read_string();
+    pattern_match();
 }

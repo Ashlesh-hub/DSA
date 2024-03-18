@@ -1,12 +1,78 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int stack[6], rev[6];
 int top = -1, k = 0;
 int size;
-void push();
-void pop();
-void display();
-int pali();
+void push()
+{
+    int num;
+    if (top == (size - 1))
+    {
+        printf("Stack Overflow\n");
+    }
+    else
+    {
+        printf("Enter the number to be pushed\n");
+        scanf("%d", &num);
+        top++;
+        stack[top] = num;
+    }
+}
+
+void pop()
+{
+    int num;
+    if (top == -1)
+    {
+        printf("Stack Underflow\n");
+    }
+    else
+    {
+        num = stack[top];
+        printf("Popped element is %d\n", num);
+        top--;
+    }
+}
+
+void display()
+{
+    int i;
+    if (top == -1)
+    {
+        printf("Stack Underflow\n");
+    }
+    else
+    {
+        printf("Stack Contents....\n");
+        for (i = top; i >= 0; i--)
+        {
+            printf("%d\n", stack[i]);
+        }
+    }
+}
+
+
+int pali()
+{
+    int i, flag = 1;
+    int j = 0;
+    // Populate rev array with reversed elements of the stack
+    for (i = top; i >= 0; i--)
+    {
+        rev[j++] = stack[i];
+    }
+    // Compare stack and rev arrays
+    for (i = 0; i <= top; i++)
+    {
+        if (stack[i] != rev[i])
+        {
+            flag = 0;
+            break;
+        }
+    }
+    return flag;
+}
 void main()
 {
     int choice, f;
@@ -41,62 +107,4 @@ void main()
             printf("Wrong choice...\n");
         }
     }
-}
-void push()
-{
-    int num;
-    if (top == (size - 1))
-    {
-        printf("Stack Overflow\n");
-    }
-    else
-    {
-        printf("Enter the number to be pushed\n");
-        scanf("%d", &num);
-        top++;
-        stack[top] = num;
-    }
-}
-void pop()
-{
-    int num;
-    if (top == 1)
-    {
-        printf("Stack Underflow\n");
-    }
-    else
-    {
-        num = stack[top];
-        printf("Popped element is %d\n", num);
-        top--;
-    }
-}
-void display()
-{
-    int i;
-    if (top == -1)
-    {
-        printf("Stack Underflow\n");
-    }
-    else
-    {
-        printf("Stack Contents....\n");
-        for (i = top; i >= 0; i--)
-        {
-            printf("%d\n", stack[i]);
-            rev[k++] = stack[i];
-        }
-    }
-}
-int pali()
-{
-    int i, flag = 1;
-    for (i = top; i >= 0; i--)
-    {
-        if (stack[i] != rev[--k])
-        {
-            flag = 0;
-        }
-    }
-    return flag;
 }

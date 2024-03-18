@@ -30,7 +30,7 @@ int pr(char elem) /* function for precedence */
         return 4;
     }
 }
-void main() /* main program */
+void main()
 {
     char infx[50], pofx[50], ch, elem;
     int i = 0, k = 0;
